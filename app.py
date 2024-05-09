@@ -46,7 +46,7 @@ def main():
 
 @st.cache_resource(show_spinner=False)
 # File uploader allows user to add multiple files
-    uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
+uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
 
 if st.button("Process PDFs"):
     if not uploaded_files:
