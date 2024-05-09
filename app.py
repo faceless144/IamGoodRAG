@@ -24,9 +24,9 @@ if not uploaded_file:
     st.warning('Please upload at least one PDF file.')
     st.stop()
 if uploaded_file:
-with NamedTemporaryFile(dir='.', suffix='.pdf') as f:
-    f.write(uploaded_file.getbuffer())
-   temp_dir = your_function_which_takes_a_path(f.name)
+         with NamedTemporaryFile(dir='.', suffix='.pdf') as f:
+         f.write(uploaded_file.getbuffer())
+         temp_dir = your_function_which_takes_a_path(f.name)
 
 @st.cache_resource(show_spinner=False)
 def load_data():
