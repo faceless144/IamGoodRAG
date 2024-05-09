@@ -34,7 +34,7 @@ def load_data(extracted_texts):
          index = VectorStoreIndex.from_documents(docs, service_context=service_context)
          return index
 
-index = load_data(extracted_texts)
+
 
 @st.cache_resource(show_spinner=False)
 def main():
@@ -60,7 +60,7 @@ if st.button("Process PDFs"):
         st.error("No text could be extracted from the uploaded files.")
     #return
 
-
+index = load_data(extracted_texts)
 
 
 
