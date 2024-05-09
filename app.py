@@ -51,7 +51,7 @@ def load_data():
     st.info("Upload a file and then talk to it", icon="📃")
 
 
-        index = load_data()
+    index = load_data()
 def main():
     if "messages" not in st.session_state.keys(): # Initialize the chat messages history
         st.session_state.messages = [
