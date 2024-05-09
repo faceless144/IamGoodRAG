@@ -4,7 +4,7 @@ import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.core import VectorStoreIndex, ServiceContext, Document, SimpleDirectoryReader
 import os
-from tempfile import NamedTemporaryFile
+import tempfile 
 import pypdf
 import pathlib
 
