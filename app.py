@@ -34,7 +34,7 @@ def load_data(all_texts):
          index = VectorStoreIndex.from_documents(docs, service_context=service_context)
          return index
 
-index = load_data()
+index = load_data(all_texts)
 
 @st.cache_resource(show_spinner=False)
 def main():
