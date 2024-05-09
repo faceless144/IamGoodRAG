@@ -7,7 +7,8 @@ import os
 from llama_index.core import SimpleDirectoryReader, GPTVectorStoreIndex, LLMPredictor, ServiceContext, StorageContext, load_index_from_storage
 from openai import ChatCompletion
 from openai import api_key as OPENAI_API_KEY
-import openai
+#import openai
+from llama_index.llms.openai import openai
 from pathlib import Path
 
 # Set OpenAI API Key
