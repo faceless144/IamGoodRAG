@@ -24,7 +24,7 @@ def process_pdf_files(uploaded_files):
     return all_texts
 @st.cache_resource(show_spinner=False)
 def load_data():
-        uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
+    uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
 
     if st.button("Process PDFs"):
         if not uploaded_files:
