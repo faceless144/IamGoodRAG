@@ -4,7 +4,7 @@ import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.core import VectorStoreIndex, ServiceContext, Document, SimpleDirectoryReader
 import os
-import tempfile
+from tempfile import NamedTemporaryFile
 
 # Initialize Streamlit app
 
@@ -24,8 +24,9 @@ if not uploaded_file:
     st.warning('Please upload at least one PDF file.')
     st.stop()
 if uploaded_file:
-        temp_dir = os.path()
-      #  path = os.path.join(temp_dir, uploaded_file.name)
+with NamedTemporaryFile(dir='.', suffix='.pdf') as f:
+    f.write(uploaded_file.getbuffer())
+   temp_dir = your_function_which_takes_a_path(f.name)
 
 @st.cache_resource(show_spinner=False)
 def load_data():
