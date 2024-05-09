@@ -4,7 +4,7 @@ import streamlit as st
 from PyPDF2 import PdfReader, PdfWriter
 import tempfile
 import os
-from llama_index.core import SimpleDirectoryReader, GPTVectorStoreIndex, LLMPredictor, ServiceContext, StorageContext, load_index_from_storage
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, LLMPredictor, ServiceContext, StorageContext, load_index_from_storage
 from openai import ChatCompletion
 from openai import api_key as OPENAI_API_KEY
 #import openai
@@ -71,7 +71,7 @@ def index_pdf(pdf_path):
     documents = SimpleDirectoryReader(pdf_dir).load_data()
     llm_predictor = LLMPredictor(temperature=0)
     service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor)
-    index = GPTVectorStoreIndex(documents, service_context=service_context)
+    index = VectorStoreIndex(documents, service_context=service_context)
 
     # Persist the index to disk
     index.set_index_id("pdf_index")
