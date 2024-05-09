@@ -39,14 +39,14 @@ index = load_data()
 
 def main():
 
-st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
-openai.api_key = st.secrets.openai_key
-st.title("Welcome, I am your Reader")
-st.info("Upload a file and then talk to it", icon="📃")
+    st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
+    openai.api_key = st.secrets.openai_key
+    st.title("Welcome, I am your Reader")
+    st.info("Upload a file and then talk to it", icon="📃")
 
 @st.cache_resource(show_spinner=False)
 # File uploader allows user to add multiple files
-uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
+    uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
 
 if st.button("Process PDFs"):
     if not uploaded_files:
