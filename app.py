@@ -30,7 +30,7 @@ def load_data(extracted_texts):
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
-def main():
+#def main():
     st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
     openai.api_key = st.secrets.openai_key
     st.title("Welcome, I am your Reader")
@@ -77,5 +77,5 @@ def main():
                 message = {"role": "assistant", "content": response.response}
                 st.session_state.messages.append(message) # Add response to message history
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+ #   main()
