@@ -11,7 +11,7 @@ import openai
 from pathlib import Path
 
 # Set OpenAI API Key
-openai.api_key = "YOUR_OPENAI_API_KEY"
+openai.api_key = st.secrets.openai_key
 
 # Define Streamlit app
 def main():
