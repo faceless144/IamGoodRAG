@@ -17,7 +17,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
     st.session_state.messages = [
         {"role": "assistant", "content": "Welcome to Good reader!"}
     ]
-
+experimental_allow_widgets=True
 # File Uploader
 #uploaded_file = st.file_uploader("File upload", accept_multiple_files=True, type="pdf")
 #if not uploaded_file:
