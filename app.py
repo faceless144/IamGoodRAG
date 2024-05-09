@@ -3,13 +3,14 @@ import pdfplumber
 import os
 import tempfile
 import openai
-from llama_index import Index  # Make sure to install and setup llamaindex
+from llama_index.llms.openai import OpenAI
+from llama_index.core import VectorStoreIndex, ServiceContext, Document, SimpleDirectoryReader
 
 # Set your OpenAI API key
 openai.api_key = st.secrets.openai_key
 
 # Initialize your LlamaIndex
-index = Index("openai")
+index = VectorStoreIndex("openai")
 
 def extract_text_from_pdf(file):
     """Extracts text from a PDF file."""
