@@ -23,7 +23,7 @@ uploaded_file = st.file_uploader("File upload", accept_multiple_files=True, type
 if not uploaded_file:
     st.warning('Please upload at least one PDF file.')
     st.stop()
-if uploaded_file:
+#if uploaded_file:
  #with NamedTemporaryFile(dir='.', suffix='.pdf') as f:
  #        f.write(uploaded_file.getbuffer())
  #        temp_dir = your_function_which_takes_a_path(f.name)
