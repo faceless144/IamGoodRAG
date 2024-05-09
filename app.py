@@ -24,7 +24,7 @@ if not uploaded_file:
     st.warning('Please upload at least one PDF file.')
     st.stop()
 if uploaded_file:
-        temp_dir = tempfile.mkdtemp()
+        temp_dir = os.getcwd()
       #  path = os.path.join(temp_dir, uploaded_file.name)
 
 @st.cache_resource(show_spinner=False)
