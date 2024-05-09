@@ -39,7 +39,7 @@ index = load_data()
 
 def main():
 
- st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
 openai.api_key = st.secrets.openai_key
 st.title("Welcome, I am your Reader")
 st.info("Upload a file and then talk to it", icon="📃")
