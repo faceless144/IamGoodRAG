@@ -10,7 +10,7 @@ from llama_index.core import VectorStoreIndex, ServiceContext, Document, SimpleD
 openai.api_key = st.secrets.openai_key
 
 # Initialize your LlamaIndex
-index = VectorStoreIndex("openai")
+index = VectorStoreIndex("OpenAI")
 
 def extract_text_from_pdf(file):
     """Extracts text from a PDF file."""
