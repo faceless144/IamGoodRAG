@@ -34,7 +34,7 @@ st.write(temp_dir.name)
 
 uploaded_file = st.file_uploader("Upload a file", accept_multiple_files=True, type=['pdf'])
 uploaded_file_name = "File_provided"
-uploaded_file_path = pathlib.Path(temp_dir.name) / uploaded_file_name
+uploaded_file_path = pathlib.Path(temp_dir.name)
 
 #if uploaded_file is not None:
 #  with open(uploaded_file_path, 'wb') as output_temporary_file:
