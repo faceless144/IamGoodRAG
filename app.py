@@ -51,14 +51,14 @@ uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True
 if st.button("Process PDFs"):
     if not uploaded_files:
         st.warning("Please upload at least one PDF file.")
-        return
+    return
 
     # Extract text from all the uploaded PDF files
     extracted_texts = process_pdf_files(uploaded_files)
 
     if not extracted_texts:
         st.error("No text could be extracted from the uploaded files.")
-        return
+    return
 
 
 
