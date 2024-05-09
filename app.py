@@ -18,21 +18,6 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
         {"role": "assistant", "content": "Welcome to Good reader!"}
     ]
 
-# OpenAI API Key (Ensure to set your OPENAI_API_KEY in your environment variables)
-api_key = os.getenv('OPENAI_API_KEY')
-if not api_key:
-    st.warning('OpenAI API key is not set in environment variables.')
-    st.stop()
-
-openai.api_key = api_key
-
-# LlamaIndex Embeddings Model
-try:
-    index = LlamaIndex(model="text-embedding-ada-002")
-except Exception as e:
-    st.error(f"Failed to load LlamaIndex model: {str(e)}")
-    st.stop()
-
 # File Uploader
 uploaded_files = st.file_uploader("Upload PDF files", accept_multiple_files=True, type=['pdf'])
 if not uploaded_files:
