@@ -38,7 +38,10 @@ def main():
         index, storage_dir = index_pdf(merged_pdf_path)
 
         st.write("PDF indexed successfully! You can now ask questions.")
-
+        print(type(index))
+        print(type(query))
+        print(index)
+        print(query)
         # Chat functionality
         user_input = st.text_input("Ask a question about the merged PDF:")
         if user_input:
