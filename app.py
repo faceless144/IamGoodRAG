@@ -22,7 +22,7 @@ def process_pdf_files(uploaded_files):
             text = extract_text_from_pdf(uploaded_file)
             all_texts.append(text)
     return all_texts
-@st.cache_resource(show_spinner=False)
+
 def load_data():
     uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
 
@@ -52,7 +52,7 @@ def main():
 
 
     index = load_data()
-
+    @st.cache_resource(show_spinner=False)
     if "messages" not in st.session_state.keys(): # Initialize the chat messages history
         st.session_state.messages = [
             {"role": "assistant", "content": "Welcome to Good reader!"}
