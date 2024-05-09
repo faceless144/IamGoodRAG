@@ -4,7 +4,7 @@ import streamlit as st
 from PyPDF2 import PdfReader, PdfWriter
 import tempfile
 import os
-from llama_index import SimpleDirectoryReader, GPTVectorStoreIndex, LLMPredictor, ServiceContext, StorageContext, load_index_from_storage
+from llama_index.core import SimpleDirectoryReader, GPTVectorStoreIndex, LLMPredictor, ServiceContext, StorageContext, load_index_from_storage
 from openai import ChatCompletion
 from openai import api_key as OPENAI_API_KEY
 import openai
