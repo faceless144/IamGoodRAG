@@ -26,7 +26,7 @@ def process_pdf_files(uploaded_files):
 
 
 
-def load_data(all_texts):
+def load_data():
     with st.spinner(text="Loading and indexing the docs – hang tight! This should take 2-10 minutes."):
          #reader = SimpleDirectoryReader(pathlib.Path(temp_dir.name))
          docs = load_data(all_texts)
@@ -34,7 +34,7 @@ def load_data(all_texts):
          index = VectorStoreIndex.from_documents(docs, service_context=service_context)
          return index
 
-index = load_data(all_texts)
+index = load_data()
 
 @st.cache_resource(show_spinner=False)
 def main():
