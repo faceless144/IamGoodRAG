@@ -6,6 +6,7 @@ from llama_index.core import VectorStoreIndex, ServiceContext, Document, SimpleD
 import os
 from tempfile import NamedTemporaryFile
 import pypdf
+import pathlib
 
 # Initialize Streamlit app
 
@@ -24,11 +25,20 @@ uploaded_file = st.file_uploader("File upload", accept_multiple_files=True, type
 #if not uploaded_file:
 #    st.warning('Please upload at least one PDF file.')
 #    st.stop()
-bytes_data = uploaded_file.read()
-with NamedTemporaryFile(delete=False) as tmp:  # open a named temporary file
-    tmp.write(bytes_data)                      # write data from the uploaded file into it
-    data = PyPDFLoader(tmp.name).load()        # <---- now it works!
-os.remove(tmp.name)
+
+
+
+
+temp_dir = tempfile.TemporaryDirectory()
+st.write(temp_dir.name)
+
+uploaded_file = st.file_uploader("Upload a file")
+uploaded_file_name = "File_provided"
+uploaded_file_path = pathlib.Path(temp_dir.name) / uploaded_file_name
+
+if uploaded_file is not None:
+  with open(uploaded_file_path, 'wb') as output_temporary_file:
+    output_temporary_file.write(uploaded_file.read())
 
 
 @st.cache_resource(show_spinner=False)
