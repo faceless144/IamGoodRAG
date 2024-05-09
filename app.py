@@ -44,7 +44,7 @@ openai.api_key = st.secrets.openai_key
 st.title("Welcome, I am your Reader")
 st.info("Upload a file and then talk to it", icon="📃")
 
-
+@st.cache_resource(show_spinner=False)
 # File uploader allows user to add multiple files
 uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
 
@@ -63,7 +63,7 @@ if st.button("Process PDFs"):
 
 
 
-@st.cache_resource(show_spinner=False)
+
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
         {"role": "assistant", "content": "Welcome to Good reader!"}
