@@ -27,6 +27,8 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
 #    st.warning('Please upload at least one PDF file.')
 #    st.stop()
 
+temp_dir = tempfile.TemporaryDirectory()
+st.write(temp_dir.name)
 uploaded_file = st.file_uploader("Upload a file", accept_multiple_files=True, type=['pdf'])
 uploaded_file_name = "File_provided"
 uploaded_file_path = pathlib.Path(temp_dir.name)
