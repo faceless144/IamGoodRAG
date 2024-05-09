@@ -6,7 +6,7 @@ import openai
 from llamaindex import Index  # Make sure to install and setup llamaindex
 
 # Set your OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets.openai_key
 
 # Initialize your LlamaIndex
 index = Index("openai")
