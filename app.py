@@ -20,7 +20,7 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
     ]
 
 # File Uploader
-uploaded_file = st.file_uploader("File upload", accept_multiple_files=True, type="pdf")
+uploaded_file = st.file_uploader("File upload", accept_multiple_files=True, type=['pdf'])
 #if not uploaded_file:
 #    st.warning('Please upload at least one PDF file.')
 #    st.stop()
