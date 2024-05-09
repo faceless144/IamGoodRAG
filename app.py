@@ -22,7 +22,7 @@ def process_pdf_files(uploaded_files):
             text = extract_text_from_pdf(uploaded_file)
             all_texts.append(text)
     return all_texts
-
+@st.cache_resource(show_spinner=False)
 def load_data(extracted_texts):
     with st.spinner(text="Loading and indexing the docs – hang tight! This should take 2-10 minutes."):
         docs = Document(extracted_texts)
