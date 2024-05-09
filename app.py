@@ -36,7 +36,7 @@ def load_data():
 
 index = load_data()
 
-
+@st.cache_resource(show_spinner=False)
 def main():
 
     st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
@@ -44,7 +44,7 @@ def main():
     st.title("Welcome, I am your Reader")
     st.info("Upload a file and then talk to it", icon="📃")
 
-@st.cache_resource(show_spinner=False)
+
 # File uploader allows user to add multiple files
 uploaded_files = st.file_uploader("Choose PDF files", accept_multiple_files=True, type=['pdf'])
 
