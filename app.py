@@ -3,7 +3,7 @@ import pdfplumber
 import os
 import tempfile
 import openai
-from llamaindex import Index  # Make sure to install and setup llamaindex
+from llama_index import Index  # Make sure to install and setup llamaindex
 
 # Set your OpenAI API key
 openai.api_key = st.secrets.openai_key
