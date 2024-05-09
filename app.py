@@ -1,7 +1,7 @@
 import streamlit as st
 import pdfplumber
 import openai
-from llamaindex import LlamaIndex
+from llama_index import LlamaIndex
 import os
 import tempfile
 
