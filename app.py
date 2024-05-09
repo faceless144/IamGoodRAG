@@ -31,7 +31,7 @@ def load_data(extracted_texts):
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
-@st.cache_resource(show_spinner=False)
+
 def main():
     st.set_page_config(page_title="GOODRAG", page_icon="", layout="centered", initial_sidebar_state="auto", menu_items=None)
     openai.api_key = st.secrets.openai_key
@@ -53,7 +53,7 @@ def main():
         #return
 
         index = load_data(extracted_texts)
-
+@st.cache_resource(show_spinner=False)
     if "messages" not in st.session_state.keys(): # Initialize the chat messages history
         st.session_state.messages = [
             {"role": "assistant", "content": "Welcome to Good reader!"}
