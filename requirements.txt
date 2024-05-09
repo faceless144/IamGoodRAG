@@ -1,4 +1,6 @@
 streamlit
 openai
-pdfplumber
 llama-index
+nltk
+pypdf
+llama-index-llms-openai
