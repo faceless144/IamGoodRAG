@@ -7,3 +7,5 @@ llama-index-llms-openai
 pdfplumber
 pathlib
 pypdf2
+shutil
+io
