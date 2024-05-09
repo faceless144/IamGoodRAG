@@ -19,26 +19,6 @@ if "messages" not in st.session_state.keys(): # Initialize the chat messages his
     ]
 
 # File Uploader
-uploaded_files = st.file_uploader("Upload PDF files", accept_multiple_files=True, type=['pdf'])
-if not uploaded_files:
-    st.warning('Please upload at least one PDF file.')
-    st.stop()
-/**
-# Function to extract text from PDF
-def extract_text_from_pdf(pdf_file):
-    with pdfplumber.open(pdf_file) as pdf:
-        pages = [page.extract_text() for page in pdf.pages]
-    return "\n".join(filter(None, pages))
-**/
-# Process uploaded files and extract text
-texts = []
-for uploaded_file in uploaded_files:
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
-        temp_file.write(uploaded_file.getvalue())
-        texts.append(extract_text_from_pdf(temp_file.name))
-        os.unlink(temp_file.name)
-
-
 uploaded_file = st.file_uploader("File upload", accept_multiple_files=True, type="pdf")
 if not uploaded_file:
     st.warning('Please upload at least one PDF file.')
