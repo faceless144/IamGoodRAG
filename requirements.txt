@@ -5,3 +5,4 @@ nltk
 pypdf
 llama-index-llms-openai
 pdfplumber
+pathlib
