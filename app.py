@@ -24,7 +24,7 @@ if not uploaded_file:
     st.warning('Please upload at least one PDF file.')
     st.stop()
 #if uploaded_file:
-with NamedTemporaryFile(dir='.', suffix='.csv') as f:
+with NamedTemporaryFile(dir='.', suffix='.pdf') as f:
     f.write(uploaded_file.getbuffer())
     temp_dir= f.name
 
