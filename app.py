@@ -13,8 +13,8 @@ from io import BytesIO
 openai.api_key = st.secrets["openai_key"]
 
 def main():
-    st.title("RAG System with Streamlit, LLaMA-Index, and GPT-4")
-    st.write("Upload multiple PDF files to merge and query using GPT-4.")
+    st.title("DocTalk, talk to your docs  - Developed by Abhyas Manne")
+    st.write("Upload one or more multiple PDF files")
 
     uploaded_files = st.file_uploader("Upload PDF files", accept_multiple_files=True, type=['pdf'])
 
