@@ -90,7 +90,7 @@ def merge_pdfs(files):
         return None
 
 
-@st.cache_resource(show_spinner=False)
+#@st.cache_resource(show_spinner=False)
 def index_pdf(pdf_path):
     try:
         # Create a temporary directory for storing indexed data
