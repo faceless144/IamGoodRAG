@@ -13,9 +13,6 @@ from io import BytesIO
 # Set OpenAI API Key
 openai.api_key = st.secrets["openai_key"]
 
-
-##########################################
-
 def main():
     st.title("RAG System with Streamlit, LLaMA-Index, and GPT-4")
     st.write("Upload multiple PDF files to merge and query using GPT-4.")
@@ -120,12 +117,6 @@ def index_pdf(pdf_path):
     except Exception as e:
         st.error(f"An error occurred while indexing PDF: {e}")
         return None, None
-
-
-
-
-
-#######################################################
 
 if __name__ == "__main__":
     main()
