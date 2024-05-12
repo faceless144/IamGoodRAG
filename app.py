@@ -32,6 +32,7 @@ def main():
                         mime="application/pdf"
                     )
                 index = None
+                storage_dir = None
                 if "index" not in st.session_state:  # Initialize the index only once
                     index, storage_dir = index_pdf(merged_pdf_path)
                     if index is None or storage_dir is None:
