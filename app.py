@@ -81,8 +81,10 @@ def main():
                                 st.session_state.messages.append(message) # Add response to message history
 
                 # Clean up temporary files
-                if st.session_state.storage_dir:
+                if st.session_state.storage_dir and os.path.exists(st.session_state.storage_dir):
                     shutil.rmtree(st.session_state.storage_dir)
+                elif st.session_state.storage_dir:
+                    st.write(f"Directory '{st.session_state.storage_dir}' does not exist. Skipping removal.")
             finally:
                 os.remove(merged_pdf_path)
 
