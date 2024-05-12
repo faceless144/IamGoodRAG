@@ -31,7 +31,7 @@ def main():
                         file_name="merged_document.pdf",
                         mime="application/pdf"
                     )
-                index = none
+                index = None
                 if "index" not in st.session_state:  # Initialize the index only once
                     index, storage_dir = index_pdf(merged_pdf_path)
                     if index is None or storage_dir is None:
