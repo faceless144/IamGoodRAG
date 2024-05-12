@@ -34,14 +34,18 @@ def main():
                     )
                 if "pdf_index" not in st.session_state:
                     index, storage_dir = index_pdf(merged_pdf_path)
-                if index:
+                    if index is not None:
                         st.session_state.pdf_index = index
                         st.session_state.storage_dir = storage_dir
                         st.write("PDF indexed successfully!")
+                    else:
+                        st.error("Failed to create index. Please check the logs for details.")
+                        return
                 else:
                     index = st.session_state.pdf_index
                     storage_dir = st.session_state.storage_dir
                     st.write("Using existing index")
+
 
 
        #     index, storage_dir = index_pdf(merged_pdf_path)
