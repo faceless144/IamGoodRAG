@@ -21,8 +21,6 @@ def main():
     if uploaded_files:
         st.write(f"{len(uploaded_files)} PDF files uploaded.")
         merged_pdf_path = merge_pdfs(uploaded_files)
-        index = None  # Initialize index to None
-        storage_dir = None  # Initialize storage_dir to None        
         if merged_pdf_path:
             st.write("PDF files merged successfully!")
             try:
