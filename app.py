@@ -14,7 +14,7 @@ openai.api_key = st.secrets["openai_key"]
 
 def main():
     st.title("DocTalk, talk to your docs  - Developed by Abhyas Manne")
-    st.write("Upload one or more multiple PDF files")
+    st.write("Upload one or more PDF files")
 
     uploaded_files = st.file_uploader("Upload PDF files", accept_multiple_files=True, type=['pdf'])
 
