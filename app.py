@@ -45,8 +45,8 @@ def main():
                     
                     if "chat_engine" not in st.session_state.keys(): # Initialize the chat engine
                             st.session_state.chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
-                    summary = st.session_state.chat_engine.chat("Summarize")
-                    st.write(summary)
+                    summary = st.session_state.chat_engine.chat("Summarize briefly")
+                    st.write(summary.response)
                     if prompt := st.chat_input("Your question"): # Prompt for user input and save to chat history
                         st.session_state.messages.append({"role": "user", "content": prompt})
                     
