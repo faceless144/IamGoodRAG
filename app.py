@@ -84,7 +84,7 @@ def main():
                 if st.session_state.storage_dir and os.path.exists(st.session_state.storage_dir):
                     shutil.rmtree(st.session_state.storage_dir)
                 elif st.session_state.storage_dir:
-                    st.write(f"Directory '{st.session_state.storage_dir}' does not exist. Skipping removal.")
+                    #st.write(f"Directory '{st.session_state.storage_dir}' does not exist. Skipping removal.")
             finally:
                 os.remove(merged_pdf_path)
 
