@@ -104,7 +104,7 @@ def merge_pdfs(files):
     finally:
         temp_merged_pdf.close()
 #@st.cache_resource(show_spinner=False)
-def index_pdf(uploaded_files,temp_dir):
+def index_pdf(pdf_path,temp_dir):
     try:
         storage_dir = Path(temp_dir) / "storage"
         pdf_dir = storage_dir / "pdfs"
