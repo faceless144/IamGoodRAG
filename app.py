@@ -109,11 +109,7 @@ def index_pdf(uploaded_files,temp_dir):
         storage_dir = Path(temp_dir) / "storage"
         pdf_dir = storage_dir / "pdfs"
         pdf_dir.mkdir(parents=True, exist_ok=True)
-
-        for i, uploaded_file in enumerate(uploaded_files):
-            with open(pdf_dir / f"document_{i}.pdf", "wb") as file:
-                file.write(uploaded_file.getvalue())
-
+        shutil.copy(pdf_path, pdf_dir / "merged_document.pdf")
 
         with st.spinner("Indexing documents..."):
             docs = SimpleDirectoryReader(pdf_dir).load_data()
