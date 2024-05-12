@@ -75,7 +75,7 @@ def index_pdf(pdf_path):
 
         # Read and index the PDF
         documents = SimpleDirectoryReader(pdf_dir).load_data()
-        service_context = ServiceContext(llm=OpenAI(model="gpt-4-turbo", temperature=0.1))
+        service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0.1, system_prompt="You are a tutor, answer questions from context"))
         index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 
         # Persist the index to disk
