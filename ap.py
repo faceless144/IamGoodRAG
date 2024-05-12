@@ -1,4 +1,17 @@
+import streamlit as st
+from PyPDF2 import PdfReader, PdfWriter
+import tempfile
+import os
+from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, ServiceContext, StorageContext
+from openai import Completion
+import openai
+from llama_index.llms.openai import OpenAI
+from pathlib import Path
+import shutil
+from io import BytesIO
 
+# Set OpenAI API Key
+openai.api_key = st.secrets["openai_key"]
 
 
 
