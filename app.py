@@ -38,8 +38,10 @@ def main():
                 if index:
                     st.write("PDF indexed successfully! You can now ask questions.")
 
-                    if 'messages' not in st.session_state:
-                        st.session_state['messages'] = []
+                    if "messages" not in st.session_state.keys(): # Initialize the chat messages history
+                        st.session_state.messages = [
+                            {"role": "assistant", "content": "Welcome to math tutor!"}
+                        ]
 
                     if "chat_engine" not in st.session_state.keys(): # Initialize the chat engine
                             st.session_state.chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
