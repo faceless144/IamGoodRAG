@@ -32,10 +32,22 @@ def main():
                         file_name="merged_document.pdf",
                         mime="application/pdf"
                     )
+                if "pdf_index" not in st.session_state:
+                    index, storage_dir = index_pdf(merged_pdf_path)
+                if index:
+                        st.session_state.pdf_index = index
+                        st.session_state.storage_dir = storage_dir
+                        st.write("PDF indexed successfully!")
+                else:
+                    index = st.session_state.pdf_index
+                    storage_dir = st.session_state.storage_dir
+                    st.write("Using existing index")
 
 
-                if "index" not in st.session_state:  # Initialize the index only once
-                    st.session_state.index, st.session_state.storage_dir = index_pdf(merged_pdf_path)
+       #     index, storage_dir = index_pdf(merged_pdf_path)
+
+       #         if "index" not in st.session_state:  # Initialize the index only once
+       #             st.session_state.index, st.session_state.storage_dir = index_pdf(merged_pdf_path)
 
                 if index:
                     st.write("PDF indexed successfully! You can now ask questions. Please wait a few seconds..")
