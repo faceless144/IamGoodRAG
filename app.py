@@ -32,7 +32,7 @@ def main():
                         file_name="merged_document.pdf",
                         mime="application/pdf"
                     )
-                if "pdf_index" not in st.session_state:
+                if "index" not in st.session_state:
                     index, storage_dir = index_pdf(merged_pdf_path)
                 if index:
                         st.session_state.pdf_index = index
