@@ -33,7 +33,9 @@ def main():
                         mime="application/pdf"
                     )
 
-                index, storage_dir = index_pdf(merged_pdf_path)
+
+                if "index" not in st.session_state:  # Initialize the index only once
+                    st.session_state.index, st.session_state.storage_dir = index_pdf(merged_pdf_path)
 
                 if index:
                     st.write("PDF indexed successfully! You can now ask questions. Please wait a few seconds..")
