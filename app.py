@@ -33,8 +33,10 @@ def main():
                     )
                 index = None
                 storage_dir = None
+                if "temp_dir" not in st.session_state:
+                    st.session_state.temp_dir = tempfile.mkdtemp()
                 if "index" not in st.session_state:  # Initialize the index only once
-                    index, storage_dir = index_pdf(merged_pdf_path)
+                    index, storage_dir = index_pdf(merged_pdf_path,st.session_state.temp_dir)
                     if index is None or storage_dir is None:
                         st.error("Failed to index PDF. Please try again.")
                     else:
@@ -101,9 +103,9 @@ def merge_pdfs(files):
     finally:
         temp_merged_pdf.close()
 #@st.cache_resource(show_spinner=False)
-def index_pdf(pdf_path):
+def index_pdf(pdf_path,temp_dir):
     try:
-        storage_dir = Path(tempfile.mkdtemp())
+        storage_dir = Path(temp_dir) / "storage"
         pdf_dir = storage_dir / "pdfs"
         pdf_dir.mkdir(parents=True, exist_ok=True)
 
