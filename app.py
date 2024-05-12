@@ -79,7 +79,7 @@ def main():
                                 st.session_state.messages.append(message) # Add response to message history
 
                 # Clean up temporary files
-                if storage_dir:
+                if st.session_state.storage_dir:
                     shutil.rmtree(storage_dir)
             finally:
                 os.remove(merged_pdf_path)
