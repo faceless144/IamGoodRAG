@@ -36,7 +36,7 @@ def main():
                 if "temp_dir" not in st.session_state:
                     st.session_state.temp_dir = tempfile.mkdtemp()
                 if "index" not in st.session_state:  # Initialize the index only once
-                    index, storage_dir = index_pdf(uploaded_files,st.session_state.temp_dir)
+                    index, storage_dir = index_pdf(merged_pdf_path,st.session_state.temp_dir)
                     if index is None or storage_dir is None:
                         st.error("Failed to index PDF. Please try again.")
                     else:
