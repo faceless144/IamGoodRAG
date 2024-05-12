@@ -80,7 +80,7 @@ def main():
 
                 # Clean up temporary files
                 if st.session_state.storage_dir:
-                    shutil.rmtree(session_state.storage_dir)
+                    shutil.rmtree(st.session_state.storage_dir)
             finally:
                 os.remove(merged_pdf_path)
 
