@@ -40,7 +40,7 @@ def main():
 
                     if "messages" not in st.session_state.keys(): # Initialize the chat messages history
                         st.session_state.messages = [
-                            {"role": "assistant", "content": "Welcome to math tutor!"}
+                            {"role": "assistant", "content": "Welcome to DocTalk!"}
                         ]
 
                     if "chat_engine" not in st.session_state.keys(): # Initialize the chat engine
