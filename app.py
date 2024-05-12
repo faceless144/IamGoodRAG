@@ -99,7 +99,7 @@ def merge_pdfs(files):
         return None
     finally:
         temp_merged_pdf.close()
-@st.cache_resource(show_spinner=False)
+#@st.cache_resource(show_spinner=False)
 def index_pdf(pdf_path):
     try:
         storage_dir = Path(tempfile.mkdtemp())
