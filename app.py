@@ -37,10 +37,10 @@ def main():
 
                 if index:
                     st.write("PDF indexed successfully! You can now ask questions.")
-                    summary = st.session_state.chat_engine.chat(Summarize the document)
+                   
                     if "messages" not in st.session_state.keys(): # Initialize the chat messages history
                         st.session_state.messages = [
-                            {"role": "assistant", "content": summary}
+                            {"role": "assistant", "content": "Welcome to DocTalk"}
                         ]
                     
                     if "chat_engine" not in st.session_state.keys(): # Initialize the chat engine
