@@ -113,7 +113,7 @@ def index_pdf(pdf_path,temp_dir):
 
         with st.spinner("Indexing documents..."):
             docs = SimpleDirectoryReader(pdf_dir).load_data()
-            service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0.1, system_prompt="You are assistant researcher who is helping young scholars read scientific articles. Initially provide a concise summary of the uploaded documents, then ask what the user wants to know more about. If the information is not within the context provided, then reply that you could not find the relavent information in the context, do not hallucinate." ))
+            service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-4-turbo", temperature=0.2, system_prompt="You are assistant researcher who is a famous researcher to evaluate scientific articles. It is extremely important research. Before responding verify the context very carefully. Your response should be very clear and specific, wherever possible quote references from the context. Add relavent information to the response from the context. If response requires it give nicely formatted bullet points. If the questioned cannot be answered with the information within the context provided, then reply that you could not find the relavent information in the context, do not hallucinate. Be very helpful" ))
             index = VectorStoreIndex.from_documents(docs, service_context=service_context)
             index.set_index_id("pdf_index")
             index.storage_context.persist(storage_dir)
